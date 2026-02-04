@@ -1,63 +1,75 @@
-**RecordStores.it** è una piattaforma open source dedicata alla mappatura, valorizzazione e gestione dei negozi di dischi indipendenti in Italia.
+# RecordStores.it
 
-Il progetto nasce come iniziativa **community-driven**, con l’obiettivo di creare un archivio affidabile, curato e sostenibile nel tempo, costruito insieme ad appassionati, proprietari e contributor.
+![PHP](https://img.shields.io/badge/PHP-8.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-MariaDB-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Community](https://img.shields.io/badge/Community-Driven-purple)
 
-🌍 Sito ufficiale: https://www.recordstores.it
+**RecordStores.it** is an open-source platform dedicated to mapping, promoting, and managing independent record stores in Italy.
+
+The project was born as a **community-driven initiative**, with the goal of building a reliable, curated, and long-term sustainable archive, created together with music lovers, store owners, and contributors.
+
+🌍 Official website: https://www.recordstores.it
 
 ---
 
-## ✨ Funzionalità principali
+## ✨ Main Features
 
-- 📍 Mappa interattiva dei negozi di dischi
-- 🏪 Schede store complete (descrizione, immagini, orari, contatti)
-- 👤 Sistema utenti (contributor, proprietari, admin)
-- 🔐 Rivendicazione negozi con verifica email di dominio
-- 🔔 Sistema notifiche interno
-- ⭐ Preferiti e interazioni utente
-- 🛠 Area amministrativa
-- 🖼 Gallery immagini con ordinamento
+- 📍 Interactive map of record stores  
+- 🏪 Detailed store profiles (description, images, opening hours, contacts)  
+- 👤 User system (contributors, store owners, admins)  
+- 🔐 Store claim system with domain email verification  
+- 🔔 Internal notification system  
+- ⭐ Favorites and user interactions  
+- 🛠 Administrative dashboard  
+- 🖼 Image gallery with ordering  
 - 🔗 Social links (Facebook, Instagram, YouTube, TikTok)
 
 ---
 
-## 🧱 Stack tecnologico
+## 🧱 Tech Stack
 
-- **Backend**: PHP 8.x (PDO, sessioni native)
-- **Database**: MySQL / MariaDB
-- **Frontend**: Bootstrap 5, Vanilla JavaScript
-- **Mappe**: Leaflet
-- **Email**: SMTP / mail abstraction
+- **Backend**: PHP 8.x (PDO, native sessions)  
+- **Database**: MySQL / MariaDB  
+- **Frontend**: Bootstrap 5, Vanilla JavaScript  
+- **Maps**: Leaflet  
+- **Email**: SMTP / mail abstraction  
 - **Auth**: Session-based + OAuth (Google)
 
 ---
 
-## 📁 Struttura del progetto
+## 📁 Project Structure
 
 ```text
 /
-├── api/                # API backend
-├── admin/              # Dashboard amministrativa
-├── assets/             # JS, CSS, immagini statiche
-├── lib/                # Helper e logica condivisa
-├── templates/          # Componenti UI
-├── sql/                # Schema database
-├── config/             # Configurazioni (solo esempi)
+├── api/                # Backend APIs
+├── admin/              # Admin dashboard
+├── assets/             # JS, CSS, static assets
+├── lib/                # Shared helpers and logic
+├── templates/          # UI components
+├── sql/                # Database schema
+├── config/             # Configuration (examples only)
 └── README.md
+└── README.md
+````
 
-## ⚙️ Installazione locale
+---
 
-1. Clona il repository
+## ⚙️ Local Installation
+
+1. Clone the repository
 
 ```bash
-git clone https://github.com/TUO-USERNAME/recordstores.it.git
+git clone https://github.com/YOUR-USERNAME/recordstores.it.git
 ```
 
-2. Crea il database
+2. Create the database
 
 * MySQL / MariaDB
-* importa lo schema da `sql/schema.sql`
+* Import the schema from `sql/schema.sql`
 
-3. Configura i file di esempio
+3. Configure example files
 
 ```bash
 cp config/db.php.example config/db.php
@@ -65,51 +77,48 @@ cp config/mail.php.example config/mail.php
 cp config/oauth.php.example config/oauth.php
 ```
 
-4. Avvia il server (MAMP, Apache, Nginx, ecc.)
+4. Start the server (MAMP, Apache, Nginx, etc.)
 
 ---
 
-## 🔐 Sicurezza
+## 🔐 Security
 
-Questo repository **NON include**:
+This repository **does NOT include**:
 
-* credenziali reali
-* email SMTP
-* token OAuth
-* dati utente
-* media caricati dagli utenti
+* real credentials
+* SMTP email accounts
+* OAuth tokens
+* user data
+* uploaded media
 
-Tutti i file sensibili sono forniti **solo come `.example`**.
-
----
-
-## 🤝 Contribuire
-
-Contributi, issue e pull request sono benvenuti.
-
-Linee guida:
-
-* mantieni lo stile del codice
-* commenta le parti critiche
-* descrivi chiaramente lo scopo della PR
+All sensitive files are provided **only as `.example` files**.
 
 ---
 
+## 🤝 Contributing
+
+Contributions, issues, and pull requests are welcome.
+
+Guidelines:
+
+* keep code style consistent
+* comment critical sections
+* clearly describe the purpose of the PR
 
 ---
 
-## 📜 Licenza
+## 📜 License
 
-Questo progetto è rilasciato sotto **licenza MIT**.
-Vedi il file `LICENSE` per i dettagli.
+This project is released under the **MIT License**.
+See the `LICENSE` file for details.
 
 ---
 
 ## ❤️ Credits
 
-Sviluppo e design: **Recycle Design**.
-Community: appassionati di musica e contributor indipendenti
+Development & design: **Recycle Design**
+Community: music lovers and independent contributors
 
-> RecordStores.it è un progetto indipendente, non affiliato a piattaforme commerciali.
+> RecordStores.it is an independent project and is not affiliated with commercial platforms.
 
-````
+```
