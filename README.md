@@ -66,17 +66,45 @@ The project was born as a **community-driven initiative**, with the goal of buil
 
 ```text
 /
-├── api/                # Backend APIs (stores, events, notifications)
-│   ├── admin/          # Admin-only APIs
-│   └── events/         # Event management APIs
-├── admin/              # Admin dashboard & moderation panels
-├── assets/             # JS, CSS, static assets
-├── uploads/            # Uploaded images (stores, events)
-├── lib/                # Shared helpers and business logic
-├── templates/          # UI components
-├── sql/                # Database schema
-├── config/             # Configuration (examples only)
+├── admin/                      # Dashboard amministrativa
+│   ├── dashboard.php
+│   ├── events-pending.php
+│   ├── stores-all.php
+│   ├── users-list.php
+│   └── ...
+│
+├── api/                        # Backend API endpoints
+│   ├── admin/                  # API riservate admin
+│   │   ├── event-status.php
+│   │   └── dashboard-stats.php
+│   │
+│   ├── auth/                   # Login, register, OAuth
+│   ├── stores/                 # CRUD negozi
+│   ├── events/                 # Propose, list, moderation
+│   ├── notifications/          # Sistema notifiche
+│   ├── profile/                # Gestione profilo utente
+│   ├── utils/                  # Geocode ecc.
+│   ├── config/                 # db.php
+│   └── lib/                    # session, notifier, mail
+│
+├── assets/                     # Frontend assets
+│   ├── css/
+│   ├── js/
+│   └── plugins/
+│
+├── uploads/                    # Media caricati dagli utenti
+│   ├── stores/
+│   └── events/
+│
+├── config/                     # Configurazioni globali
+│
+├── index.php
+├── store.php
+├── eventi.php
+├── login.php
+├── register.php
 └── README.md
+
 ```
 
 ---
