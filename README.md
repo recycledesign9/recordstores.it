@@ -57,7 +57,10 @@ The project was born as a **community-driven initiative**, with the goal of buil
 * **Frontend**: Bootstrap 5, Vanilla JavaScript
 * **Maps**: Leaflet
 * **Carousel**: Swiper.js
-* **Email**: SMTP / mail abstraction
+* **Rich Text Editor**: TinyMCE
+* **Date Picker**: Flatpickr
+* **Icons**: Font Awesome
+* **Email**: PHPMailer (SMTP abstraction)
 * **Auth**: Session-based + OAuth (Google)
 
 ---
