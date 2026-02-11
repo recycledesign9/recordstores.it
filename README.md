@@ -1,3 +1,4 @@
+
 # RecordStores.it
 
 ![PHP](https://img.shields.io/badge/PHP-8.x-blue)
@@ -10,32 +11,54 @@
 
 The project was born as a **community-driven initiative**, with the goal of building a reliable, curated, and long-term sustainable archive, created together with music lovers, store owners, and contributors.
 
-🌍 Official website: https://www.recordstores.it
+🌍 Official website: [https://www.recordstores.it](https://www.recordstores.it)
 
 ---
 
 ## ✨ Main Features
 
-- 📍 Interactive map of record stores  
-- 🏪 Detailed store profiles (description, images, opening hours, contacts)  
-- 👤 User system (contributors, store owners, admins)  
-- 🔐 Store claim system with domain email verification  
-- 🔔 Internal notification system  
-- ⭐ Favorites and user interactions  
-- 🛠 Administrative dashboard  
-- 🖼 Image gallery with ordering  
-- 🔗 Social links (Facebook, Instagram, YouTube, TikTok)
+* 📍 Interactive map of record stores
+* 🏪 Detailed store profiles (description, images, opening hours, contacts)
+* 👤 User system (contributors, store owners, admins)
+* 🔐 Store claim system with domain email verification
+* 🔔 Internal notification system
+* ⭐ Favorites and user interactions
+* 🛠 Administrative dashboard
+* 🖼 Image gallery with ordering
+* 🔗 Social links (Facebook, Instagram, YouTube, TikTok)
+
+### 🎟 Events System (New)
+
+* 📅 Community-driven event proposals
+* 🏬 Events linked to stores or custom venues
+* 🖼 Optional event image upload (with default placeholder fallback)
+* ⏳ Admin moderation workflow (pending / approved / rejected)
+* 🔔 Automatic notifications:
+
+  * to admins when a new event is submitted
+  * to users when their event is approved or rejected
+* 🧭 Smart filtering:
+
+  * Today
+  * Weekend
+  * This Month
+  * All Events
+* 🏙 Dynamic city filter (auto-generated from available events)
+* 🖱 Swiper-based responsive carousel for multi-event months
+* 📖 Expandable descriptions with smooth animation
+* 🔗 External event link support
 
 ---
 
 ## 🧱 Tech Stack
 
-- **Backend**: PHP 8.x (PDO, native sessions)  
-- **Database**: MySQL / MariaDB  
-- **Frontend**: Bootstrap 5, Vanilla JavaScript  
-- **Maps**: Leaflet  
-- **Email**: SMTP / mail abstraction  
-- **Auth**: Session-based + OAuth (Google)
+* **Backend**: PHP 8.x (PDO, native sessions)
+* **Database**: MySQL / MariaDB
+* **Frontend**: Bootstrap 5, Vanilla JavaScript
+* **Maps**: Leaflet
+* **Carousel**: Swiper.js
+* **Email**: SMTP / mail abstraction
+* **Auth**: Session-based + OAuth (Google)
 
 ---
 
@@ -43,16 +66,84 @@ The project was born as a **community-driven initiative**, with the goal of buil
 
 ```text
 /
-├── api/                # Backend APIs
-├── admin/              # Admin dashboard
+├── api/                # Backend APIs (stores, events, notifications)
+│   ├── admin/          # Admin-only APIs
+│   └── events/         # Event management APIs
+├── admin/              # Admin dashboard & moderation panels
 ├── assets/             # JS, CSS, static assets
-├── lib/                # Shared helpers and logic
+├── uploads/            # Uploaded images (stores, events)
+├── lib/                # Shared helpers and business logic
 ├── templates/          # UI components
 ├── sql/                # Database schema
 ├── config/             # Configuration (examples only)
 └── README.md
-└── README.md
-````
+```
+
+---
+
+## 🎟 Events Workflow
+
+### 1️⃣ Submission
+
+Authenticated users can propose a new event via modal form.
+
+The event is saved with:
+
+```
+status = 'pending'
+```
+
+### 2️⃣ Admin Moderation
+
+Admins can:
+
+* Approve → `status = 'approved'`
+* Reject → `status = 'rejected'`
+
+Moderation panel:
+
+```
+/admin/events-pending.php
+```
+
+### 3️⃣ Notifications
+
+When an event is:
+
+* **Submitted**
+
+  * Admins receive notification
+  * User receives confirmation notification
+
+* **Approved**
+
+  * User receives approval notification
+
+* **Rejected**
+
+  * User receives rejection notification
+
+Notifications are stored internally and displayed via the notification system.
+
+---
+
+## 🖼 Image Handling (Events)
+
+* Event image upload is optional.
+* If no image is provided:
+
+  * A predefined placeholder image is automatically used.
+* Images are stored inside:
+
+```
+/uploads/events/
+```
+
+Frontend rendering dynamically resolves:
+
+```
+BASE_URL/uploads/events/{image}
+```
 
 ---
 
@@ -77,7 +168,15 @@ cp config/mail.php.example config/mail.php
 cp config/oauth.php.example config/oauth.php
 ```
 
-4. Start the server (MAMP, Apache, Nginx, etc.)
+4. Ensure uploads directory exists
+
+```bash
+mkdir uploads
+mkdir uploads/stores
+mkdir uploads/events
+```
+
+5. Start the server (MAMP, Apache, Nginx, etc.)
 
 ---
 
@@ -121,4 +220,4 @@ Community: music lovers and independent contributors
 
 > RecordStores.it is an independent project and is not affiliated with commercial platforms.
 
-```
+---
